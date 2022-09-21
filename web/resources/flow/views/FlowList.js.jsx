@@ -71,20 +71,78 @@ class FlowList extends Binder {
 
     return (
       <FlowLayout>
-        <h1> Flow List </h1>
+         <div className="yt-row space-between">
+          <h3> Flows </h3>
+            <Link className="yt-btn" to={'/flows/new'} 
+              style={{
+                 backgroundColor: "#2a95e3", 
+                 width: "15%", 
+                 minHeight: "2rem",
+                 marginTop: "1.5rem",
+                 textAlign: "center",
+                 fontSize: "12px"
+                }}>New Flow</Link>
+        </div>
         <hr/>
-        <Link to={'/flows/new'}> New Flow </Link>
         <br/>
         { isEmpty ?
           (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
           :
-          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <ul>
-              {flowListItems.map((flow, i) =>
+          <div style={{ opacity: isFetching ? 3.5 : 1, width: "80%", height: "50vh", display: "flex", flexDirection: "row", justifyContent: "space-around", padding: "50px"}}>
+            <div style={{ flexDirection:"column", border: "2px solid gray", width: "30%"}}>
+              <h4 style={{ fontWeight: "bold", marginLeft: "15px"}}>Flow 1</h4>
+                <hr/>
+                {flowListItems.map((flow, i) =>
                 <FlowListItem key={flow._id + i} flow={flow} />
               )}
-            </ul>
-          </div>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 1
+                </label>
+                  <label style={{ display: "flex", marginLeft: "5px"}}>
+                    <input type="checkbox" style={{ marginRight: "5px"}}/>
+                    Task 2
+                  </label>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 3
+                </label>
+            </div>
+
+            <div style={{ flexDirection:"column", border: "2px solid gray", width: "30%"}}>
+              <h4 style={{ fontWeight: "bold", marginLeft: "15px"}}>Flow 2</h4>
+                <hr/>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 1
+                </label>
+                  <label style={{ display: "flex", marginLeft: "5px"}}>
+                    <input type="checkbox" style={{ marginRight: "5px"}}/>
+                    Task 2
+                  </label>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 3
+                </label>
+            </div>
+
+            <div style={{ flexDirection:"column", border: "2px solid gray", width: "30%"}}>
+              <h4 style={{ fontWeight: "bold", marginLeft: "15px"}}>Flow 3</h4>
+                <hr/>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 1
+                </label>
+                  <label style={{ display: "flex", marginLeft: "5px"}}>
+                    <input type="checkbox" style={{ marginRight: "5px"}}/>
+                    Task 2
+                  </label>
+                <label style={{ display: "flex", marginLeft: "5px"}}>
+                  <input type="checkbox" style={{ marginRight: "5px"}}/>
+                  Task 3
+                </label>
+            </div>
+        </div>
         }
       </FlowLayout>
     )

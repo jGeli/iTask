@@ -7,9 +7,9 @@ const FlowListItem = ({
   flow
 }) => {
   return (
-    <li>
-      <Link to={`/flows/${flow._id}`}> {flow.name}</Link>
-    </li>
+      <li>
+        <Link to={`/flows/${flow._id}`}> {flow.name}</Link>
+      </li>
   )
 }
 
